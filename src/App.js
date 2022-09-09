@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export const App = () => {
     const books = [
         {
@@ -96,17 +98,25 @@ export const App = () => {
 }
 
 const Book = ({ title, author, url, shortDescription, coverImageUrl, publisher, publicationDate, detailedDescription }) => {
+    const [expanded, setExpanded] = useState(false)
+
+    const handleClick = () => {
+        setExpanded(!expanded)
+    }
+
     return(
         <div style={{ border: '1px solid purple', margin: '10px' }}>
             <p> {title} </p>
             <p> {author} </p>
             <p> {shortDescription} </p>
             <p> {coverImageUrl} </p>
-
-            <p> {url} </p>
-            <p> {publisher} </p>
-            <p> {publicationDate} </p>
-            <p> {detailedDescription} </p>
+            <button onClick={() => handleClick()}>
+                {expanded ? 'Less' : 'More'} info
+            </button>
+            {expanded ? <p>URL: {url}</p> : ''}
+            {expanded ? <p>Publisher: {publisher}</p> : ''}
+            {expanded ? <p>Publication Date: {publicationDate}</p> : ''}
+            {expanded ? <p>Full Description: {detailedDescription}</p> : ''}
         </div>
     )
 }
