@@ -1,5 +1,17 @@
+.mainInfo {
+    display: flex;
+}
+
 .title {
     font-size: 1.3rem;
+}
+
+.cover {
+    width: 7rem;
+}
+
+.cover img {
+    width:100%;
 }
 
 button {
