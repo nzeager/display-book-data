@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { books } from "./books"
 import styles from "./App.css"
+import { MainBook } from "./MainBook"
 
 export const App = () => {
     return(
@@ -24,16 +25,7 @@ const Book = ({ title, author, url, shortDescription, coverImageUrl, publisher, 
 
     return(
         <div style={{ border: '1px solid purple', margin: '10px', padding: '5px' }}>
-            <div className="mainInfo">
-                <div>
-                    { title ? <p className='title'> {title} </p> : ""}
-                    { author ? <p className='author'> {author} </p> : "" }
-                    { shortDescription ? <p> {shortDescription} </p> : "" }
-                </div>
-                <div>
-                    { coverImageUrl ? <p className='cover'> <img src={coverImageUrl} alt=""></img> </p> : "" }
-                </div>
-            </div>
+            <MainBook title={title} author={author} shortDescription={shortDescription} coverImageUrl={coverImageUrl} />
             <button onClick={() => handleClick()} aria-expanded={ expanded }>
                 {expanded ? 'Less' : 'More'} info
             </button>
