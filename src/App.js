@@ -8,8 +8,7 @@ export const App = () => {
             <h1>Books</h1>
             <div className="book-list">
                 {books.map((book, index) => (
-                    <Book title={book.title} author={book.author} url={book.url} shortDescription={book.shortDescription} coverImageUrl={book.coverImageUrl} publisher={book.publisher} publicationDate={book.publicationDate} detailedDescription={book.detailedDescription} 
-                    />
+                    <Book {...book} />
                 ))}
             </div>
         </>
@@ -28,7 +27,7 @@ const Book = ({ title, author, url, shortDescription, coverImageUrl, publisher, 
             <div className="mainInfo">
                 <div>
                     { title ? <p className='title'> {title} </p> : ""}
-                    { author ? <p> {author} </p> : "" }
+                    { author ? <p className='author'> {author} </p> : "" }
                     { shortDescription ? <p> {shortDescription} </p> : "" }
                 </div>
                 <div>

@@ -1,13 +1,19 @@
 .mainInfo {
     display: flex;
+    justify-content: space-between;
 }
 
 .title {
     font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.author {
+    font-weight: bold;
 }
 
 .cover {
-    width: 7rem;
+    width: 6rem;
 }
 
 .cover img {
