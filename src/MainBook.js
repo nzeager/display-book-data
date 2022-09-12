@@ -1,4 +1,5 @@
 import { useState } from "react"
+import errImg from "./brokenImageLink.png"
 
 export const MainBook = ({title, author, shortDescription, coverImageUrl}) => {
 
@@ -12,7 +13,7 @@ export const MainBook = ({title, author, shortDescription, coverImageUrl}) => {
                 { shortDescription ? <p> {shortDescription} </p> : "" }
             </div>
             <div>
-                { coverImageUrl ? <p className='cover'> <img src={imageBroken ? require('./brokenImageLink.png') : coverImageUrl} onError={() => setImageBroken(true)} alt={"Cover for " + title}></img> </p> : "" }
+                { coverImageUrl ? <p className='cover'> <img src={imageBroken ? errImg : coverImageUrl} onError={() => setImageBroken(true)} alt={"Cover for " + title}></img> </p> : "" }
             </div>
         </div>
     )
