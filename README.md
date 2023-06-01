@@ -6,7 +6,7 @@ Skills:
 
 - first React project
 - referencing wireframe
-- breaking code into components
+- using the following in React: state, components, props
 - placing additional information in expandable view using `aria-expanded` attribute
 - using placehold data rather than pulling from API
 - account for missing data
